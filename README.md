@@ -64,12 +64,41 @@ UI 可通过下拉框实时切换三种策略对比效果。
 
 ## 系统要求
 
-- Windows 10 / 11（64 位）
-- 无需安装 Python 或任何依赖
+- Windows 10 / 11 / macOS / Linux（64 位）
+- Python 3.9 及以上
 
-## 快速开始
+## ⚠️ GitHub 仓库说明
 
-双击 `启动.exe`，等待模型加载（约 30 秒），浏览器自动打开界面。
+本仓库为课程作业提交用途。原始打包版项目包含内置 Python 运行时（`runtime/`，约 2 GB）和便携启动器（`启动.exe`），但受限于 GitHub 的限制无法直接上传：
+
+| 限制 | 说明 |
+|---|---|
+| **单文件 100 MB 上限** | `model.safetensors`（391 MB）超出限制，改用 Git LFS 存储 |
+| **仓库总容量推荐 ≤ 1 GB** | 仅 `runtime/` 便携 Python 环境就达 2 GB，无法上传 |
+| **二进制文件不宜版本管理** | `.exe`、运行时 DLL 等不适合 Git 追踪 |
+
+因此仓库中移除了 `启动.exe` 和 `runtime/`，只保留源代码、模型权重和依赖清单。**课程报告中所述"双击 exe 运行"为本地打包版的使用方式。**
+
+## 本地运行
+
+> 如果你 clone 了本仓库，按以下步骤运行：
+
+```bash
+# 1. 安装依赖（仅首次）
+pip install -r requirements.txt
+
+# 2. 确保安装 Git LFS（否则模型文件无法正确下载）
+git lfs install
+git lfs pull
+
+# 3. 启动系统
+cd project
+python app/app.py
+```
+
+浏览器将自动打开 http://127.0.0.1:7860，等待模型加载约 30 秒即可使用。
+
+> 💡 如需还原为"双击 exe"的打包版，可将本仓库 `project/` 目录覆盖到原始打包版对应路径，配合 `runtime/` 和 `启动.exe` 使用。
 
 ## 技术栈
 
