@@ -1,0 +1,21 @@
+# Python 便携运行环境（2GB+，不上传）
+runtime/
+
+# Python 缓存
+__pycache__/
+*.pyc
+*.pyo
+
+# 用户运行时数据（上传的图片、历史记录）
+user_data/
+
+# 可执行文件
+启动.exe
+
+# IDE
+.vscode/
+.idea/
+
+# 系统文件
+Thumbs.db
+.DS_Store
