@@ -1,0 +1,10 @@
+
+## 项目团队分工与产出
+
+| 组员 | 负责模块 | 主要工作内容 | 核心产出 |
+|---|---|---|---|
+| **郑智** | 数据处理 | 原始数据采集清洗、图文对提取与标签对齐、CSV构建、人脸图像标准化 | dataset.csv (400条)、标准化人脸图像库 |
+| **肖彤** | CV 视觉 | ResNet18 双阶段训练 (FER2013->RAF-DB)、特征提取器截断、摄像头实时推理接口 | rafdb_emotion_model.pth, vision_toolkit.py |
+| **黄丁鹏** | NLP 文本 | RoBERTa-wwm-ext微调训练、Tokenizer封装、768d语义特征提取 | sentiment_model/, nlp_toolkit.py |
+| **王晨宇** | 融合模型 | 四种融合策略设计与实现、冲突感知机制、Pipeline总调度器 | all_fusion.py, gated_fusion.py, pipeline.py |
+| **罗松宁** | 前端集成 | Gradio Web 界面开发、摄像头实时功能、历史记录系统、便携打包（启动.exe） | app.py, launcher_portable.py |
